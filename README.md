@@ -1,4 +1,6 @@
 
+[💬 Telegram 交流群](https://t.me/kejikkkcom) | [📺 YouTube 频道：科技KKK](https://www.youtube.com/@%E7%A7%91%E6%8A%80KKK)
+
 ---
 
 # 住宅 IP 代理调度系统 🌐
@@ -30,19 +32,18 @@
 
 1. 登录 Cloudflare 控制台，进入 **Workers & Pages** -> **D1 SQL Database**。
 2. 点击 **Create database**，创建一个数据库（例如命名为 `proxy-db`）。
+
 > **注意**：无需手动建表，系统代码内置了自动建表逻辑。
-
-
 
 ### 第二步：部署 Cloudflare Worker
 
 1. 进入 **Workers & Pages**，点击 **Create application** -> **Create Worker**，随意命名（例如 `proxy-controller`）并部署。
 2. 点击刚创建的 Worker，进入 **Settings** -> **Variables**。
 3. **绑定 D1 数据库**：
+
 * 在 `D1 Database Bindings` 处添加绑定。
 * **Variable name** 必须填入：`DB`
 * **D1 Database** 选择第一步创建的 `proxy-db`。
-
 
 4. **配置环境变量 (Environment Variables)**（可选，不填则使用系统默认值）：
 
@@ -102,8 +103,12 @@ http://proxy:888888@<VPS母机IP>:7920
 
 ```
 
-VPS实时日志查看命令
+**VPS实时日志查看命令：**
+
+```bash
 journalctl -u proxy-lite.service -f
+
+```
 
 ---
 
